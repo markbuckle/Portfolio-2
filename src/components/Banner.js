@@ -6,12 +6,16 @@ import { ArrowRightCircle } from 'react-bootstrap-icons';
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+//   Component needs to show the current text. Only indicates the portion of the word being displayed
   const [text, setText] = useState('');
+//   A state to determine how fast one letter comes after the first one is typed
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
   const toRotate = [ "Web Developer", "Web Designer", "UI/UX Designer" ];
+//   Indicates how much time passes between one extra ledger being typed out
   const period = 2000;
 
+//   A function that takes care of typing or deleting
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
